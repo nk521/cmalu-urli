@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: .
+    ports:
+      - 42069:8080
+    depends_on:
+      - database
+    container_name: cmalu_urli_web
+    environment:
+      - 'DB_PORT=42070'
+      - 'DB_HOST=database'
+
+  database:
+    image: mysql:latest
+    env_file:
+      - .env
+    container_name: cmalu_urli_db
+    ports:
+      - 42070:3306
+    volumes:
+      - cmalu_urli_vol:/var/lib/mysql
