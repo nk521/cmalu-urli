@@ -1,10 +1,13 @@
-FROM golang:1.19-alpine
+FROM golang:1.19-bullseye
 
 WORKDIR /app
 
+COPY init.sh ./
+
 COPY go.mod ./
 COPY go.sum ./
-RUN go mod download
+
+RUN go mod download && go mod verify
 
 COPY cmalu_urli.go ./
 
@@ -12,4 +15,4 @@ RUN go build -o ./cmalu_urli
 
 EXPOSE 8080
 
-CMD [ "./cmalu_urli" ]
+CMD ["bash",  "./init.sh" ]
