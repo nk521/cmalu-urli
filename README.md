@@ -2,6 +2,23 @@
 
 A small link shortner written in GoLang.
 
+## Config
+Copy the `env-example` file to `.env` and then edit the variables.
+
+Example:
+```bash
+cp ./env-example .env
+nano .env
+```
+
+Example `.env`:
+```text
+MYSQL_USER="bruh"
+MYSQL_PASSWORD="VeryStrongPassword"
+MYSQL_DATABASE="cmalu_urli"
+MARIADB_RANDOM_ROOT_PASSWORD="true"
+```
+
 ## Run?
 To run it using docker, just do `docker compose up -d`. To run it on local, run `go mod download && go run .` (On local the port is 8080)
 
