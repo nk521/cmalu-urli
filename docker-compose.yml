@@ -16,6 +16,8 @@ services:
     environment:
       - DB_PORT=3306
       - DB_HOST=database
+    env_file:
+      - .env
 
   database:
     image: mariadb:latest
