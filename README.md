@@ -20,7 +20,7 @@ MARIADB_RANDOM_ROOT_PASSWORD="true"
 ```
 
 ## Run?
-To run it using docker, just do `docker compose up -d`. To run it on local, run `go mod download && go run .` (On local the port is 8080)
+To run it using docker, just do `docker compose up -d --build`. To run it on local, run `go mod download && go run .` (On local the port is 8080)
 
 ## How?
 Use `curl -d '{"original_url": "URL"}' localhost:42069/cmalu` to recieve a short link which expires in 24 hours.
