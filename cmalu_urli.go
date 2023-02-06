@@ -36,6 +36,7 @@ func init() {
 	if err != nil {
 		log.Fatalf("Error connecting to the database: %s", err)
 	}
+	log.Println("Database connection successful!")
 }
 
 // shortenLink function to shorten the given link
@@ -71,7 +72,7 @@ func shortenLink(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 	// output the short link
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintln(w, "c.raju.dev/c/"+link.ShortURL)
+	fmt.Fprintln(w, "http://localhost:42069/c/"+link.ShortURL)
 }
 
 // redirect if short link is valid
