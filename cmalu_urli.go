@@ -27,7 +27,7 @@ type Link struct {
 // Connect to the MySQL database
 func init() {
 	var err error
-	var connstr string = fmt.Sprintf("mason:p5g41tmlx@tcp(%s:%s)/cmalu_urli", os.Getenv("DB_HOST"), os.Getenv("DB_PORT"))
+	var connstr string = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", os.Getenv("MYSQL_USER"), os.Getenv("MYSQL_PASSWORD"), os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("MYSQL_DATABASE"))
 	db, err = sql.Open("mysql", connstr)
 	if err != nil {
 		log.Fatalf("Error connecting to the database: %s", err)
