@@ -23,6 +23,7 @@ services:
       - .env
     volumes:
       - cmalu_urli_vol:/var/lib/mysql
+      - ./dump:/docker-entrypoint-initdb.d
 
 volumes:
   cmalu_urli_vol:
