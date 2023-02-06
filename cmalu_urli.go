@@ -112,6 +112,6 @@ func main() {
 	router.POST("/cmalu", shortenLink)
 	router.GET("/c/:short_url", redirectLink)
 
-	log.Println("Server starting on localhost:8080")
+	log.Println("Server started!")
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
